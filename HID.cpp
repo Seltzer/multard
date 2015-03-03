@@ -43,6 +43,8 @@ Keyboard_ Keyboard;
 #define RAWHID_TX_SIZE 64
 #define RAWHID_RX_SIZE 64
 
+
+
 extern const u8 _hidReportDescriptor[] PROGMEM;
 const u8 _hidReportDescriptor[] = {
 	
@@ -105,6 +107,20 @@ const u8 _hidReportDescriptor[] = {
     0x29, 0x65,                    //   USAGE_MAXIMUM (Keyboard Application)
     0x81, 0x00,                    //   INPUT (Data,Ary,Abs)
     0xc0,                          // END_COLLECTION
+
+	// Consumer - based on:
+	//   http://www.freebsddiary.org/APC/usb_hid_usages.php
+    //   http://www.usb.org/developers/hidpage/Hut1_12v2.pdf
+	0x05, 0x0c,                    // USAGE_PAGE (Consumer)
+	0x09, 0x01,                    // USAGE (Consumer Control)
+	0xa1, 0x01,                    // COLLECTION (Application)
+	
+	
+
+	0x000,
+	
+
+	
 
 #if RAWHID_ENABLED
 	//	RAW HID
