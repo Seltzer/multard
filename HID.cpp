@@ -112,14 +112,12 @@ const u8 _hidReportDescriptor[] = {
 	//   http://www.freebsddiary.org/APC/usb_hid_usages.php
     //   http://www.usb.org/developers/hidpage/Hut1_12v2.pdf
 	0x05, 0x0c,                    // USAGE_PAGE (Consumer)
-	0x09, 0x01,                    // USAGE (Consumer Control)
-	0xa1, 0x01,                    // COLLECTION (Application)
-	
-	
-
-	0x000,
-	
-
+	0x09, 0xe0,                    // USAGE (Volume)
+	0x15, 0x00,                    // LOGICAL_MINIMUM(0)
+	0x25, 0x64,                    // LOGICAL_MAXIMUM(100)
+    0x75, 0x07,                    // REPORT_SIZE(7)
+    0x95, 0x01,                    // REPORT_COUNT(1)
+	0x81, 0x00,                    // INPUT (DATA, VARIABLE, ABSOLUTE, NO WRAP, LINEAR, NO PREFERRED)
 	
 
 #if RAWHID_ENABLED
